@@ -30,7 +30,7 @@
     {
         "DisplayName": "Disable Sentry Spawning",
         "Category": "SCUM:stadia_controller",
-        "Subcategory": "Server:robot 2:2",
+        "Subcategory": "Config:robot:2",
         "Description": "Disable Mechs",
         "FieldName": "$DisableSentrySpawning",
         "InputType": "checkbox",
