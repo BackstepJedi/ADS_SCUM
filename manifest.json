@@ -1,9 +1,9 @@
 {
-	"id": "ec280171-c67b-4cf8-923f-dc27fea91ee1",
-	"authors": ["CubeCoders Limited", "AMP Community"],
-	"origin": "https://github.com/CubeCoders/AMPTemplates.git",
-	"url": "https://github.com/CubeCoders/AMPTemplates",
+	"id": "f12ce525-1eba-454b-861e-6799e0924cf9",
+	"authors": ["BackstepJedi"],
+	"origin": "https://https://github.com/BackstepJedi/ADS_SCUM.git",
+	"url": "https://https://github.com/BackstepJedi/ADS_SCUM",
 	"imagefile": "",
-	"prefix": "",
+	"prefix": "bj01",
 	"repotype": "AppTemplates"
 }
