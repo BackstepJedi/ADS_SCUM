@@ -30,7 +30,7 @@
     {
         "DisplayName": "Disable Sentry Spawning",
         "Category": "SCUM:stadia_controller",
-        "Subcategory": "Server:dns:1",
+        "Subcategory": "Config:robot:2",
         "Description": "Disable Mechs",
         "FieldName": "$DisableSentrySpawning",
         "InputType": "checkbox",
@@ -40,8 +40,8 @@
         "EnumValues": {
         "False": "0",
         "True": "1"
-    },
     }
+    },
     {
         "DisplayName": "Exclusive Join List",
         "Category": "SCUM:stadia_controller",
