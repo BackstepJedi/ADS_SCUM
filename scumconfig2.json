@@ -40,7 +40,7 @@
         "EnumValues": {
         "False": "0",
         "True": "1"
-    }
+    },
     }
     {
         "DisplayName": "Exclusive Join List",
