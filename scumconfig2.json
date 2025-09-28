@@ -28,6 +28,21 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "Disable Sentry Spawning",
+        "Category": "SCUM:stadia_controller",
+        "Subcategory": "Server:robot 2:2",
+        "Description": "Disable Mechs",
+        "FieldName": "$DisableSentrySpawning",
+        "InputType": "checkbox",
+        "ParamFieldName": "World.scum.DisableSentrySpawning",
+        "DefaultValue": "True",
+        "IncludeInCommandLine": "false",
+        "EnumValues": {
+        "False": "0",
+        "True": "1"
+    }
+    }
+    {
         "DisplayName": "Exclusive Join List",
         "Category": "SCUM:stadia_controller",
         "Subcategory": "Server:dns:1",
