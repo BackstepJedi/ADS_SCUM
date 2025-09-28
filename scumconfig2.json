@@ -1,4 +1,4 @@
-[
+h[
     {
         "DisplayName": "Server Settings",
         "Category": "SCUM:stadia_controller",
@@ -29,8 +29,8 @@
     },
     {
         "DisplayName": "Disable Sentry Spawning",
-        "Category": "SCUM:stadia_controller",
-        "Subcategory": "Config:robot:2",
+        "Category": "SCUM Mechs:robot",
+        "Subcategory": "Config:robot:1",
         "Description": "Disable Mechs",
         "FieldName": "$DisableSentrySpawning",
         "InputType": "checkbox",
