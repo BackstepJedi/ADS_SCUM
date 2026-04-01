@@ -35,17 +35,17 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$zip='{{$FullRootDir}}WhalleyBotV3Plugin.zip'; Invoke-WebRequest -UseBasicParsing 'https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download' -OutFile $zip; Expand-Archive -Path $zip -DestinationPath '{{$FullRootDir}}' -Force; Remove-Item $zip -Force\"",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$zip='{{$FullBaseDir}}WhalleyBotV3Plugin.zip'; Invoke-WebRequest -UseBasicParsing 'https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download' -OutFile $zip; Expand-Archive -Path $zip -DestinationPath '{{$FullBaseDir}}' -Force; Remove-Item $zip -Force\"",
         "UpdateSourceConditionSetting": "InstallWhalleyBot",
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": false
     },
-    {
+{
         "UpdateStageName": "Install WhalleyBot Plugin (Linux)",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"wget -qO '{{$FullRootDir}}WhalleyBotV3Plugin.zip' 'https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download' && unzip -o '{{$FullRootDir}}WhalleyBotV3Plugin.zip' -d '{{$FullRootDir}}' && rm -f '{{$FullRootDir}}WhalleyBotV3Plugin.zip'\"",
+        "UpdateSourceArgs": "-c \"wget -qO '{{$FullBaseDir}}WhalleyBotV3Plugin.zip' 'https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download' && unzip -o '{{$FullBaseDir}}WhalleyBotV3Plugin.zip' -d '{{$FullBaseDir}}' && rm -f '{{$FullBaseDir}}WhalleyBotV3Plugin.zip'\"",
         "UpdateSourceConditionSetting": "InstallWhalleyBot",
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": false
