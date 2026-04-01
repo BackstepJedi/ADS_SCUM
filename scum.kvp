@@ -37,7 +37,7 @@ App.ExecutableLinux=.proton/proton
 App.WorkingDir=3792580
 App.LinuxCommandLineArgs=runinprefix "{{$FullBaseDir}}SCUM/Binaries/Win64/SCUMServer.exe"
 App.WindowsCommandLineArgs=
-App.CommandLineArgs={{$PlatformArgs}} SCUM -Port={{$ServerPort}} -QueryPort={{$QueryPort}} -RCONPort {{$RCONPort}} -MaxPlayers={{$MaxUsers}} {{nobattleye}}{{$FormattedArgs}} {{$AdditionalArgs}}
+App.CommandLineArgs={{$PlatformArgs}} SCUM -Port={{$ServerPort}} -QueryPort={{$QueryPort}} -RCONPort={{$RCONPort}} -MaxPlayers={{$MaxUsers}} {{nobattleye}}{{$FormattedArgs}} {{$AdditionalArgs}}
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
 App.EnvironmentVariables={"SteamAppId":"513710","STEAM_COMPAT_DATA_PATH":"{{$FullRootDir}}.proton/compatdata","STEAM_COMPAT_CLIENT_INSTALL_PATH":"{{$FullBaseDir}}.steam/steam","HOME":"{{$FullBaseDir}}","XDG_RUNTIME_DIR":"/tmp"}
