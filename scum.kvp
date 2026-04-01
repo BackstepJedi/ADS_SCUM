@@ -1,5 +1,5 @@
-Meta.DisplayName=SCUM2
-Meta.Description=SCUM2 Dedicated Server
+Meta.DisplayName=SCUM
+Meta.Description=SCUM Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
 Meta.Arch=x86_64
@@ -9,7 +9,7 @@ Meta.DisplayImageSource=steam:513710
 Meta.EndpointURIFormat={ip}:{GenericModule.App.Ports.$ClientPort}
 Meta.ConfigManifest=scumconfig.json
 Meta.MetaConfigManifest=scummetaconfig.json
-Meta.ConfigRoot=scum2.kvp
+Meta.ConfigRoot=scum.kvp
 Meta.MinAMPVersion=2.6.0.0
 Meta.SpecificDockerImage=
 Meta.DockerRequired=False
@@ -27,6 +27,7 @@ Meta.BreakingReleaseNotes=
 Meta.AppConfigId=f6830bbe-60e2-443e-a7f3-bbb185266b15
 Meta.ImportableExtensions=[".ini"]
 Meta.AppIsMultiIPAware=False
+
 App.DisplayName=SCUM
 App.RootDir=./scum/
 App.BaseDirectory=./scum/3792580/
@@ -94,6 +95,7 @@ App.MonitorDirectChildOnly=False
 App.SupportsUniversalSleep=False
 App.WakeupMode=Any
 App.ApplicationReadyMode=RegexMatch
+
 Console.FilterMatchRegex=
 Console.FilterMatchReplacement=
 Console.ThrowawayMessageRegex=^(WARNING|ERROR): Shader.+$
@@ -109,6 +111,7 @@ Console.ServerInfoRegex=
 Console.HideFromConsoleRegex=
 Console.SuppressLogAtStart=False
 Console.UserActions={}
+
 Limits.SleepMode=False
 Limits.SleepOnStart=False
 Limits.SleepDelayMinutes=5

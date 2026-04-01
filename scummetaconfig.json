@@ -10,7 +10,7 @@
     {
         "ConfigFile": "SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json",
         "AutoMap": true,
-        "Importable": false,
+        "Importable": true,
         "ConfigType": "json"
     }
 ]

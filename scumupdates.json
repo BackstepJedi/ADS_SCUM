@@ -40,7 +40,7 @@
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": false
     },
-{
+    {
         "UpdateStageName": "Install WhalleyBot Plugin (Linux)",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
@@ -51,21 +51,21 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Create WhalleyBot API Config (Windows)",
+        "UpdateStageName": "Write WhalleyBot API Config (Windows)",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/c if not exist \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\" echo {\"Token\": \"{{$RemoteAdminPassword}}\"} > \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\"",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$cfg='{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json'; $dir=Split-Path $cfg -Parent; New-Item -ItemType Directory -Force -Path $dir | Out-Null; '{\\\"Token\\\":\\\"{{$RemoteAdminPassword}}\\\"}' | Set-Content -Encoding UTF8 $cfg\"",
         "UpdateSourceConditionSetting": "InstallWhalleyBot",
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Create WhalleyBot API Config (Linux)",
+        "UpdateStageName": "Write WhalleyBot API Config (Linux)",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/sh",
-        "UpdateSourceArgs": "-c 'if [ ! -f \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\" ]; then printf \"{\\n  \\\"Token\\\": \\\"{{$RemoteAdminPassword}}\\\"\\n}\\n\" > \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\"; fi'",
+        "UpdateSourceArgs": "-c 'mkdir -p \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer\"; printf \"{\\n  \\\"Token\\\": \\\"{{$RemoteAdminPassword}}\\\"\\n}\\n\" > \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\"'",
         "UpdateSourceConditionSetting": "InstallWhalleyBot",
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": false
