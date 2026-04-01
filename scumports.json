@@ -25,13 +25,6 @@
     },
     {
         "Protocol": "UDP",
-        "Port": 7781,
-        "Ref": "RCONPort",
-        "Name": "RCON Port",
-        "Description": "Port for Whalley RCON traffic"
-    },
-    {
-        "Protocol": "UDP",
         "Port": 27015,
         "Ref": "QueryPort",
         "Name": "Query Port",
