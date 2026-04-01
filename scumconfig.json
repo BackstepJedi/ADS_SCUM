@@ -126,6 +126,44 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "Install WhalleyBot Plugin",
+        "Category": "Updates",
+        "Subcategory": "Runtime Configuration:build:3",
+        "Description": "When enabled, the next Update will download and install the WhalleyBot plugin and create WhalleyBotAPI.json.",
+        "Keywords": "whalley,plugin,rcon",
+        "FieldName": "InstallWhalleyBot",
+        "InputType": "checkbox",
+        "ParamFieldName": "InstallWhalleyBot",
+        "DefaultValue": "false",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Additional Launch Arguments",
+        "Category": "Server Settings",
+        "Subcategory": "Startup",
+        "Description": "Additional command line arguments appended to the server startup.",
+        "Keywords": "args,launch,custom",
+        "FieldName": "AdditionalArgs",
+        "InputType": "text",
+        "ParamFieldName": "AdditionalArgs",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "WhalleyBot Token",
+        "Category": "SCUM:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Token used by WhalleyBot (same as RCON password).",
+        "Keywords": "whalley,token,rcon",
+        "FieldName": "WhalleyBotToken",
+        "InputType": "text",
+        "ParamFieldName": "Token",
+        "DefaultValue": ""
+    },
+    {
         "DisplayName": "Proton GE Release Version (Linux)",
         "Category": "Updates",
         "Subcategory": "Runtime Configuration:build:3",

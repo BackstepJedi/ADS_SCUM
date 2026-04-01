@@ -4,7 +4,8 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "SteamCMD",
         "UpdateSourceData": "3792580",
-        "UpdateSourceArgs": "513710"
+        "UpdateSourceArgs": "513710",
+        "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Proton GE Download",
@@ -23,43 +24,50 @@
         "SkipOnFailure": true
     },
     {
-        "UpdateStageName": "First Boot",
+        "UpdateStageName": "Create SCUM Config Directory",
         "UpdateSourcePlatform": "All",
-        "UpdateSource": "StartApplication"
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer",
+        "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Wait For First Boot",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "WaitForStartupComplete"
+        "UpdateStageName": "Install WhalleyBot Plugin (Windows)",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -ExecutionPolicy Bypass -Command \"$zip='{{$FullRootDir}}WhalleyBotV3Plugin.zip'; Invoke-WebRequest -UseBasicParsing 'https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download' -OutFile $zip; Expand-Archive -Path $zip -DestinationPath '{{$FullRootDir}}' -Force; Remove-Item $zip -Force\"",
+        "UpdateSourceConditionSetting": "InstallWhalleyBot",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Stop After First Boot",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "ShutdownApplication"
-    },
-    {
-    "UpdateStageName": "Install WhalleyBot Plugin",
-    "UpdateSourcePlatform": "All",
-    "UpdateSource": "FetchURL",
-    "UpdateSourceData": "https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download",
-    "UpdateSourceTarget": "{{$FullRootDir}}",
-    "UpdateSourceArgs": "WhalleyBotV3Plugin.zip",
-    "UnzipUpdateSource": true,
-    "OverwriteExistingFiles": true,
-    "DeleteAfterExtract": true
+        "UpdateStageName": "Install WhalleyBot Plugin (Linux)",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"wget -qO '{{$FullRootDir}}WhalleyBotV3Plugin.zip' 'https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download' && unzip -o '{{$FullRootDir}}WhalleyBotV3Plugin.zip' -d '{{$FullRootDir}}' && rm -f '{{$FullRootDir}}WhalleyBotV3Plugin.zip'\"",
+        "UpdateSourceConditionSetting": "InstallWhalleyBot",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Create WhalleyBot API Config (Windows)",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
-        "UpdateSourceArgs": "/c if not exist \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\" echo {\"Token\": \"{{$RemoteAdminPassword}}\"} > \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\""
+        "UpdateSourceArgs": "/c if not exist \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\" echo {\"Token\": \"{{$RemoteAdminPassword}}\"} > \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\"",
+        "UpdateSourceConditionSetting": "InstallWhalleyBot",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Create WhalleyBot API Config (Linux)",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/sh",
-        "UpdateSourceArgs": "-c 'if [ ! -f \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\" ]; then printf \"{\\n  \\\"Token\\\": \\\"{{$RemoteAdminPassword}}\\\"\\n}\\n\" > \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\"; fi'"
+        "UpdateSourceArgs": "-c 'if [ ! -f \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\" ]; then printf \"{\\n  \\\"Token\\\": \\\"{{$RemoteAdminPassword}}\\\"\\n}\\n\" > \"{{$FullBaseDir}}SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json\"; fi'",
+        "UpdateSourceConditionSetting": "InstallWhalleyBot",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
     }
 ]

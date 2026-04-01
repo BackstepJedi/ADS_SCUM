@@ -6,5 +6,11 @@
         "ConfigType": "ini",
         "ConfigFormat": "{0}={1}",
         "ConfigFormatRegex": "^(?<key>.+?)\\s*=\\s*(?<value>.*?)$"
+    },
+    {
+        "ConfigFile": "SCUM/Saved/Config/WindowsServer/WhalleyBotAPI.json",
+        "AutoMap": true,
+        "Importable": false,
+        "ConfigType": "json"
     }
 ]
