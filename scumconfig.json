@@ -154,6 +154,19 @@
         "IsPassword": true
     },
     {
+        "DisplayName": "WhalleyBot Token",
+        "Category": "Server Settings",
+        "Subcategory": "Startup",
+        "Description": "Token written to WhalleyBotAPI.json",
+        "Keywords": "whalley,token,json,rcon",
+        "FieldName": "Token",
+        "InputType": "text",
+        "ParamFieldName": "Token",
+        "DefaultValue": "",
+        "IsPassword": true,
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "Proton GE Release Version (Linux)",
         "Category": "Updates",
         "Subcategory": "Runtime Configuration:build:3",
