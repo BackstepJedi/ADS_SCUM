@@ -38,13 +38,15 @@
         "UpdateSource": "ShutdownApplication"
     },
     {
-        "UpdateStageName": "Install WhalleyBot Plugin",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download",
-        "UpdateSourceTarget": "{{$FullRootDir}}WhalleyBotV3Plugin.zip",
-        "UnzipUpdateSource": true,
-        "OverwriteExistingFiles": true
+    "UpdateStageName": "Install WhalleyBot Plugin",
+    "UpdateSourcePlatform": "All",
+    "UpdateSource": "FetchURL",
+    "UpdateSourceData": "https://panel.whalleybot.com/api/ServerPlugin/plugin_release.php?action=package-download",
+    "UpdateSourceTarget": "{{$FullRootDir}}",
+    "UpdateSourceArgs": "WhalleyBotV3Plugin.zip",
+    "UnzipUpdateSource": true,
+    "OverwriteExistingFiles": true,
+    "DeleteAfterExtract": true
     },
     {
         "UpdateStageName": "Create WhalleyBot API Config (Windows)",
